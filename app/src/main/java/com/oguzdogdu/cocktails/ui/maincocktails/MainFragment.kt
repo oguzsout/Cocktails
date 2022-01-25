@@ -1,10 +1,11 @@
-package com.oguzdogdu.cocktails
+package com.oguzdogdu.cocktails.ui.maincocktails
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.oguzdogdu.cocktails.R
 
 class MainFragment : Fragment() {
     override fun onCreateView(
