@@ -1,7 +1,11 @@
 package com.oguzdogdu.cocktails.data.model
 
+import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
+import com.oguzdogdu.cocktails.domain.model.Cocktails
+import kotlinx.parcelize.Parcelize
 
+@Parcelize
 data class Drink(
     @SerializedName("idDrink")
     val id: String,
@@ -13,9 +17,10 @@ data class Drink(
     val title: String,
     @SerializedName("strDrinkThumb")
     val image: String,
-)
+) : Parcelable
 
-data class DrinkList(
-    @SerializedName("drinks")
-    val drinksList: List<Drink> = listOf()
-)
+//fun Drink.toCocktails(): Cocktails {
+//    return Cocktails(
+//        id, isAlcoholic, category, title, image
+//    )
+//}
