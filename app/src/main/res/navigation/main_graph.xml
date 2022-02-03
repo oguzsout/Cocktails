@@ -7,9 +7,9 @@
 
     <fragment
         android:id="@+id/mainFragment"
-        android:name="com.oguzdogdu.cocktails.ui.maincocktails.MainFragment"
+        android:name="com.oguzdogdu.cocktails.ui.maincocktails.CocktailFragment"
         android:label="fragment_main"
-        tools:layout="@layout/fragment_main" >
+        tools:layout="@layout/fragment_cocktail" >
         <action
             android:id="@+id/action_mainFragment_to_cocktailDetailsFragment"
             app:destination="@id/cocktailDetailsFragment" />
@@ -22,5 +22,8 @@
         <action
             android:id="@+id/action_cocktailDetailsFragment_to_mainFragment"
             app:destination="@id/mainFragment" />
+        <argument
+            android:name="drinks"
+            app:argType="com.oguzdogdu.cocktails.data.model.Drink" />
     </fragment>
 </navigation>
