@@ -30,4 +30,13 @@ object AppModule {
     fun provideCocktailService(retrofit: Retrofit): ApiService {
         return retrofit.create(ApiService::class.java)
     }
+
+    @Provides
+    @Singleton
+    fun provideRepository(apiService: ApiService): CocktailsRepoInterface {
+        return CocktailsRepoImpl(apiService)
+    }
 }
+
+
+
