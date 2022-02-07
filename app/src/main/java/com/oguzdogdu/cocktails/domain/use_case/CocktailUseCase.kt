@@ -11,10 +11,10 @@ import java.io.IOException
 import javax.inject.Inject
 
 class CocktailUseCase @Inject constructor(private val repository: CocktailsRepoInterface) {
-    operator fun invoke(): Flow<Resource<List<Drink>>> = flow {
+    operator fun invoke(cocktailName: String): Flow<Resource<List<Drink>>> = flow {
         try {
             emit(Resource.Loading())
-            val data = repository.getCocktails()
+            val data = repository.getCocktailByName(cocktailName)
             val response = data.drinks
             emit(Resource.Success(data = response))
         } catch (e: HttpException) {

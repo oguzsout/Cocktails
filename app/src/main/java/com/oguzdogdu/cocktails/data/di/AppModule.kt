@@ -24,7 +24,6 @@ object AppModule {
             .build()
     }
 
-
     @Provides
     @Singleton
     fun provideCocktailService(retrofit: Retrofit): ApiService {
