@@ -1,4 +1,4 @@
-package com.oguzdogdu.cocktails.ui.coctailsdetails
+package com.oguzdogdu.cocktails.ui.cocktaildetails
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

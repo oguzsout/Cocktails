@@ -16,7 +16,7 @@
     </fragment>
     <fragment
         android:id="@+id/cocktailDetailsFragment"
-        android:name="com.oguzdogdu.cocktails.ui.coctailsdetails.CocktailDetailsFragment"
+        android:name="com.oguzdogdu.cocktails.ui.cocktaildetails.CocktailDetailsFragment"
         android:label="fragment_cocktail_details"
         tools:layout="@layout/fragment_cocktail_details" >
         <action
