@@ -15,14 +15,10 @@ import javax.inject.Inject
 class CocktailViewModel @Inject constructor(private val useCase: CocktailUseCase) : ViewModel() {
     private val _cocktailList = MutableStateFlow(CocktailState())
     val cocktailList: StateFlow<CocktailState>
-    get() = _cocktailList
+        get() = _cocktailList
 
-    init {
-        getCocktails()
-    }
-
-    private fun getCocktails() {
-        useCase().onEach {
+    fun getSearchCocktails(cocktailName: String) {
+        useCase(cocktailName).onEach {
             when (it) {
                 is Resource.Loading -> {
                     _cocktailList.value = CocktailState(isLoading = true)
