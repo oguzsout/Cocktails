@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
+import coil.transform.RoundedCornersTransformation
 import com.oguzdogdu.cocktails.data.model.Drink
 import com.oguzdogdu.cocktails.databinding.CocktailRowBinding
 
@@ -15,8 +16,11 @@ class CocktailAdapter : RecyclerView.Adapter<CocktailAdapter.CocktailViewHolder>
 
         fun bind(drink: Drink) {
             binding.apply {
-                imgCocktail.load(drink.image)
+                imgCocktail.load(drink.image) {
+                    transformations(RoundedCornersTransformation(25f))
+                }
                 txtCocktailName.text = drink.title
+                txtDescripcion.text = drink.description
             }
         }
     }

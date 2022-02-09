@@ -15,6 +15,8 @@ data class Drink(
     val category: String,
     @SerializedName("strDrink")
     val title: String,
+    @SerializedName("strInstructions")
+    val description: String = "",
     @SerializedName("strDrinkThumb")
     val image: String,
 ) : Parcelable

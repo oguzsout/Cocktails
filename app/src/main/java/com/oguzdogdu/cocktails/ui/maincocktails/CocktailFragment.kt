@@ -8,7 +8,6 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.coroutineScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.oguzdogdu.cocktails.base.BaseFragment
-import com.oguzdogdu.cocktails.data.model.Drink
 import com.oguzdogdu.cocktails.databinding.FragmentCocktailBinding
 import dagger.hilt.android.AndroidEntryPoint
 
