@@ -6,6 +6,7 @@ import android.widget.Toast
 import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.coroutineScope
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.oguzdogdu.cocktails.base.BaseFragment
 import com.oguzdogdu.cocktails.databinding.FragmentCocktailBinding
@@ -22,6 +23,7 @@ class CocktailFragment :
         setupRecyclerView()
         searchViewSetup()
         observeData()
+        navigateScreen()
     }
 
     private fun setupRecyclerView() {
@@ -78,6 +80,12 @@ class CocktailFragment :
 //                    cocktailAdapter.drinks = it
 //              }
             }
+        }
+    }
+    private fun navigateScreen(){
+        cocktailAdapter.setOnItemClickListener {
+            val action = CocktailFragmentDirections.actionMainFragmentToCocktailDetailsFragment(it)
+            findNavController().navigate(action)
         }
     }
 

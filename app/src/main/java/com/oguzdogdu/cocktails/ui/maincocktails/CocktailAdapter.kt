@@ -22,7 +22,18 @@ class CocktailAdapter : RecyclerView.Adapter<CocktailAdapter.CocktailViewHolder>
                 txtCocktailName.text = drink.title
                 txtDescripcion.text = drink.description
             }
+            binding.root.setOnClickListener {
+                onItemClickListener?.let {
+                    it(drink)
+                }
+            }
         }
+    }
+
+    private var onItemClickListener: ((Drink) -> Unit)? = null
+
+    fun setOnItemClickListener(listener: (Drink) -> Unit) {
+        onItemClickListener = listener
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CocktailViewHolder {
