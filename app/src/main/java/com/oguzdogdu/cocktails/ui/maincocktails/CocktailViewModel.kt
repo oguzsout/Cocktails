@@ -24,7 +24,7 @@ class CocktailViewModel @Inject constructor(private val useCase: CocktailUseCase
                     _cocktailList.value = CocktailState(isLoading = true)
                 }
                 is Resource.Success -> {
-                    _cocktailList.value = CocktailState(data = it.data)
+                    _cocktailList.value = CocktailState(data = it.data ?: emptyList())
                 }
                 is Resource.Error -> {
                     _cocktailList.value = CocktailState(error = it.message ?: "")
