@@ -21,8 +21,13 @@ data class Drink(
     val image: String,
 ) : Parcelable
 
-//fun Drink.toCocktails(): Cocktails {
-//    return Cocktails(
-//        id, isAlcoholic, category, title, image
-//    )
-//}
+fun List<Drink>.toDomainCocktail(): List<Cocktails> {
+    return this.map {
+        Cocktails(id = it.id,
+            isAlcoholic = it.isAlcoholic,
+            category = it.category,
+            title = it.title,
+            description = it.description,
+            image = it.image)
+    }
+}

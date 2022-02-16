@@ -9,5 +9,7 @@ data class Cocktails(
     val isAlcoholic: String,
     val category: String,
     val title: String,
+    val description: String = "",
     val image: String,
 ) : Parcelable
+

@@ -25,6 +25,7 @@ object AndroidX {
     const val constraintLayout = "2.1.3"
     const val legacySupport = "1.0.0"
     const val navigation = "2.4.1"
+    const val room = "2.4.0"
 }
 
 object Google {

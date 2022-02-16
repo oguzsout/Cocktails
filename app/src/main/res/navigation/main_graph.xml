@@ -9,7 +9,7 @@
         android:id="@+id/mainFragment"
         android:name="com.oguzdogdu.cocktails.ui.maincocktails.CocktailFragment"
         android:label="fragment_main"
-        tools:layout="@layout/fragment_cocktail" >
+        tools:layout="@layout/fragment_cocktail">
         <action
             android:id="@+id/action_mainFragment_to_cocktailDetailsFragment"
             app:destination="@id/cocktailDetailsFragment" />
@@ -18,12 +18,13 @@
         android:id="@+id/cocktailDetailsFragment"
         android:name="com.oguzdogdu.cocktails.ui.cocktaildetails.CocktailDetailsFragment"
         android:label="fragment_cocktail_details"
-        tools:layout="@layout/fragment_cocktail_details" >
+        tools:layout="@layout/fragment_cocktail_details">
         <action
             android:id="@+id/action_cocktailDetailsFragment_to_mainFragment"
             app:destination="@id/mainFragment" />
         <argument
             android:name="drinks"
-            app:argType="com.oguzdogdu.cocktails.data.model.Drink" />
+            app:argType="com.oguzdogdu.cocktails.domain.model.Cocktails" />
     </fragment>
+
 </navigation>
